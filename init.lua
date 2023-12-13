@@ -40,8 +40,8 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -199,7 +199,9 @@ require('lazy').setup({
       },
     },
   },
-
+  {
+    "taybart/b64.nvim",
+  },
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -534,6 +536,13 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- [[ Configure taybart/b64.nvim ]]
+vim.keymap.set('v', '<leader>be', '<cmd>lua require("b64").encode()<cr>')
+vim.keymap.set('v', '<leader>bd', '<cmd>lua require("b64").encode()<cr>')
+
+-- vnoremap <silent> <leader>be :<c-u>lua require("b64").encode()<cr>
+-- vnoremap <silent> <leader>bd :<c-u>lua require("b64").decode()<cr>
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
