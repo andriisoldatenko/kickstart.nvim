@@ -661,7 +661,7 @@ cmp.setup {
 
 -- [[ Configure taybart/b64.nvim ]]
 vim.keymap.set('v', '<leader>be', '<cmd>lua require("b64").encode()<cr>')
-vim.keymap.set('v', '<leader>bd', '<cmd>lua require("b64").encode()<cr>')
+vim.keymap.set('v', '<leader>bd', '<cmd>lua require("b64").decode()<cr>')
 
 -- vnoremap <silent> <leader>be :<c-u>lua require("b64").encode()<cr>
 -- vnoremap <silent> <leader>bd :<c-u>lua require("b64").decode()<cr>
